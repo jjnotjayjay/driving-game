@@ -16,6 +16,23 @@ var blueCar = new Car($blueCarImage, 10, 'east', [0, 0])
 
 blueCar.turn = function (direction) {
   this.direction = direction
-  this.$img.classList.remove('north', 'south', 'east', 'west')
+  this.$img.classList.remove('north', 'east', 'south', 'west')
   this.$img.classList.add(direction)
 }
+
+document.addEventListener('keydown', (e) => {
+  switch (e.key) {
+    case 'ArrowUp':
+      blueCar.turn('north')
+      break
+    case 'ArrowRight':
+      blueCar.turn('east')
+      break
+    case 'ArrowDown':
+      blueCar.turn('south')
+      break
+    case 'ArrowLeft':
+      blueCar.turn('west')
+      break
+  }
+})
