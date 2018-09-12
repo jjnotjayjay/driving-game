@@ -41,7 +41,7 @@ $blueCarImage.setAttribute('src', 'blue-car.png')
 $blueCarImage.classList.add('blue-car', 'east')
 document.body.appendChild($blueCarImage)
 
-var blueCar = new Car($blueCarImage, 10, 'east', [0, 0])
+var blueCar = new Car($blueCarImage, 5, 'east', [0, 0])
 
 document.addEventListener('keydown', (e) => {
   if (e.key === ' ') {
