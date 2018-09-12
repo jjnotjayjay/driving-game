@@ -44,6 +44,10 @@ document.body.appendChild($blueCarImage)
 var blueCar = new Car($blueCarImage, 10, 'east', [0, 0])
 
 document.addEventListener('keydown', (e) => {
+  if (e.key === ' ') {
+    blueCar.start()
+  }
+
   switch (e.key) {
     case 'ArrowUp':
       blueCar.turn('north')
