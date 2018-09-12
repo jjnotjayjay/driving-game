@@ -32,7 +32,12 @@ class Car {
   }
 
   start() {
-    window.setInterval(this.move.bind(this), 16)
+    this.moveID = window.setInterval(this.move.bind(this), 16)
+  }
+
+  stop() {
+    window.clearInterval(this.moveID)
+    this.moveID = null
   }
 }
 
@@ -45,7 +50,12 @@ var blueCar = new Car($blueCarImage, 5, 'east', [0, 0])
 
 document.addEventListener('keydown', (e) => {
   if (e.key === ' ') {
-    blueCar.start()
+    if (blueCar.moveID) {
+      blueCar.stop()
+    }
+    else {
+      blueCar.start()
+    }
   }
 
   switch (e.key) {
