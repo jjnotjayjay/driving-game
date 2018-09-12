@@ -13,3 +13,9 @@ $blueCarImage.classList.add('blue-car', 'east')
 document.body.appendChild($blueCarImage)
 
 var blueCar = new Car($blueCarImage, 10, 'east', [0, 0])
+
+blueCar.turn = function (direction) {
+  this.direction = direction
+  this.$img.classList.remove('north', 'south', 'east', 'west')
+  this.$img.classList.add(direction)
+}
