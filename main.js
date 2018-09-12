@@ -5,11 +5,34 @@ class Car {
     this.direction = direction
     this.location = location
   }
+
+  turn(direction) {
+    this.direction = direction
+    this.$img.classList.remove('north', 'east', 'south', 'west')
+    this.$img.classList.add(direction)
+  }
 }
 
 var $blueCarImage = document.createElement('img')
 $blueCarImage.setAttribute('src', 'blue-car.png')
-$blueCarImage.setAttribute('class', 'blue-car')
+$blueCarImage.classList.add('blue-car', 'east')
 document.body.appendChild($blueCarImage)
 
 var blueCar = new Car($blueCarImage, 10, 'east', [0, 0])
+
+document.addEventListener('keydown', (e) => {
+  switch (e.key) {
+    case 'ArrowUp':
+      blueCar.turn('north')
+      break
+    case 'ArrowRight':
+      blueCar.turn('east')
+      break
+    case 'ArrowDown':
+      blueCar.turn('south')
+      break
+    case 'ArrowLeft':
+      blueCar.turn('west')
+      break
+  }
+})
