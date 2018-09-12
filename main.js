@@ -27,6 +27,8 @@ class Car {
         this.location[0] -= this.speed
         break
     }
+    this.$img.style.top = this.location[1] + 'px'
+    this.$img.style.left = this.location[0] + 'px'
   }
 }
 

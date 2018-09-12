@@ -1,6 +1,9 @@
 .blue-car {
-  width: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
   margin-top: 30px;
+  width: 100px;
 }
 
 .east {
