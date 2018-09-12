@@ -9,4 +9,5 @@ class Car {
 
 var $img = document.createElement('img')
 $img.setAttribute('src', 'blue-car.png')
+$img.setAttribute('class', 'blue-car')
 document.body.appendChild($img)
