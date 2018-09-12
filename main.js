@@ -30,6 +30,10 @@ class Car {
     this.$img.style.top = this.location[1] + 'px'
     this.$img.style.left = this.location[0] + 'px'
   }
+
+  start() {
+    window.setInterval(this.move.bind(this), 16)
+  }
 }
 
 var $blueCarImage = document.createElement('img')
