@@ -32,7 +32,11 @@ class Car {
   }
 
   start() {
-    window.setInterval(this.move.bind(this), 16)
+    this.moveID = window.setInterval(this.move.bind(this), 16)
+  }
+
+  stop() {
+    window.clearInterval(this.moveID)
   }
 }
 
